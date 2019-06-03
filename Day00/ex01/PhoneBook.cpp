@@ -16,32 +16,25 @@ class Person
 	std::string underwearColour;
 	std::string darkestSecret;
 
+	private:
+		std::string display(std::string str) {
+			int size = 0;
+			
+			std::string ret;
+			for (int i = 0; i < str.length() && i <= 10; i++){
+				ret[i] = str[i];
+				size++;
+			}
+			while (size <= 10) {
+				ret[size] = " ";
+			}
+			return (ret);
+	}
+
 public:
-	std::string getFirstName() {return firstName;};
-	std::string getLastName() {return lastName;};
-	std::string getNickName() {return nickName;};
-	std::string getLogin() {return login;};
-	std::string getPostalAddress() {return postalAddress;};
-	std::string getEmail() {return email;};
-	std::string getPhoneNumber() {return phoneNumber;};
-	std::string getBirthday() {return birthday;};
-	std::string getFavoriteMeal() {return favoriteMeal;};
-	std::string getUnderwearColour() {return underwearColour;};
-	std::string getDarkestSecret() {return darkestSecret;};
-
-
-	void setIndex(int index) {_index = index;};
-	void setFirstName(std::string firstname){this->firstName = firstname;};
-	void setLastName(std::string surname){this->lastName = surname;};
-	void setNickname(std::string nickname){this->nickName = nickname;};
-	void setLogin(std::string logIn){this->login = logIn;};
-	void setPostalAddress(std::string postaladdress){this->postalAddress = postaladdress;};
-	void setEmailAddress(std::string emailaddress){email = emailaddress;};
-	void setPhoneNumber(std::string phonenumber){phoneNumber = phonenumber;};
-	void setBirthdayDate(std::string bday){birthday = bday;};
-	void setFavoriteMeal(std::string favoritemeal){favoriteMeal = favoritemeal;};
-	void setUnderwearColor(std::string underwearcolour){underwearColour = underwearcolour;};
-	void setDarkestSecret(std::string darkestsecret){darkestSecret = darkestsecret;};
+	void search() {
+		std::cout << std::to_string(_index) + " | " + display(firstName) + " | " + lastName + " | " + nickName + "\n";
+	}
 };
 
 void add(Person phoneBook[], int size){
@@ -90,6 +83,7 @@ void add(Person phoneBook[], int size){
 	std::cout << "darkestSecret:";
 	std::cin >> darkestSecret;
 
+	person._index = size;
 	person.firstName = firstName;
 	person.lastName= lastName;
 	person.nickName= nickName;
@@ -104,8 +98,10 @@ void add(Person phoneBook[], int size){
 	phoneBook[size] = person;
 }
 
-void search(Person phoneBook[]){
-	std::cout << "tTEST";
+void search(Person phoneBook[], int size){
+	for (int i = 0; i < size; ++i) {
+        phoneBook[i].search();
+    }
 }
 
 int main() {
@@ -120,7 +116,8 @@ int main() {
 			size++;
 		}
 		if (input == "SEARCH") {
-			search(phoneBook);
+			std::cout << "searching.." << std::endl;
+			search(phoneBook, size);
 		}
 		std::cin >> input;
 	}
