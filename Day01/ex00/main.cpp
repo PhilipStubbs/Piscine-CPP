@@ -10,6 +10,7 @@ void ponyOnTheHeap(void)
 	Yonp->setName("Yonp");
 	std::cout << "Name  : " << Yonp->getName() << std::endl;
 	std::cout << "can a man enjoy the ride? : " << Yonp->menCanRide() << std::endl;
+	delete Yonp;
 }
 
 void ponyOnTheStack(void)

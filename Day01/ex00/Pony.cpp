@@ -6,6 +6,7 @@
 	}
 
 	Pony::~Pony(void) {
+		std::cout << this->name << " just died";
 		return ;
 	}
 
