@@ -1,6 +1,6 @@
 
 CC = clang++
-CFLAGS  = -Wall -Werror -Wextra
+CFLAGS  = -Wall -Werror -Wextra "-std=c++98"
 
 SRC = megaphone.cpp
 OBJ_DIR = obj

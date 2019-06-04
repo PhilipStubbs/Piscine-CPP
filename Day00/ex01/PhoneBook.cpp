@@ -1,62 +1,7 @@
 #include <iostream>
 
-class Person 
-{
- public:
-	int			_index;
-	std::string firstName;
-	std::string lastName;
-	std::string nickName;
-	std::string login;
-	std::string postalAddress;
-	std::string email;
-	std::string phoneNumber;
-	std::string birthday;
-	std::string favoriteMeal;
-	std::string underwearColour;
-	std::string darkestSecret;
-
-	private:
-		std::string display(std::string str) {
-			int size = 0;
-			int len = 10;
-
-			std::string ret = "          ";
-			if (str.length() >= 10) {
-				for (int i = 0; i <= str.length() && i < 10; i++){
-					ret[i] = str[i];
-					size++;
-				}
-				ret[9] = '.';
-			} else {
-				len = len - str.length();
-				for (int i = 0; i <= str.length() && i < 10; i++){
-					ret[len] = str[i];
-					len++;
-				}
-			}
-			return (ret);
-	}
-
-public:
-	void search() {
-		std::cout << display(std::to_string(_index)) + " | " + display(firstName) + " | " + display(lastName) + " | " + display(nickName) + " |\n";
-	}
-	void getAllData() {
-		std::cout<<"firstName:      "<<firstName
-                 <<"\nlastName:       "<<lastName
-                 <<"\nnickName:       "<<nickName
-                 <<"\nlogin:          "<<login
-                 <<"\npostalAddress:  "<<postalAddress
-                 <<"\nemail:          "<<email
-                 <<"\nphoneNumber:    "<<phoneNumber
-                 <<"\nbirthday:       "<<birthday
-                 <<"\nfavoriteMeal:   "<<favoriteMeal
-                 <<"\nunderwearColour:"<<underwearColour
-                 <<"\ndarkestSecret:  "<<darkestSecret
-                 <<"\n";
-	}
-};
+#include "PhoneBook.class.hpp"
+#include "Person.class.cpp"
 
 void add(Person phoneBook[], int size){
 	Person person;
@@ -143,12 +88,11 @@ int main() {
 	std::string input;
 	int size = 0;
 	Person phoneBook[9];
-	// std::cout << "commands: EXIT, ADD, SEARCH" << std::endl;
 
 	while (input.compare("EXIT")) {
 
 		if (input == "ADD") {
-			if (size <= 8){
+			if (size < 8){
 			add(phoneBook, size);
 			size++;
 			} else {
@@ -156,21 +100,19 @@ int main() {
 			}
 		}
 		else if (input == "SEARCH") {
-			std::cout << "searching.." << std::endl;
+			std::cout << "     Index |       Name |    Surname |  Nick Name |" << std::endl;
 			search(phoneBook, size);
 			std::cout << "select index:" << std::endl;
-			 std:getline(std::cin, input);
+			 std::getline(std::cin, input);
 			if (is_number(input)){
                 int index;
                 index = std::stoi(input);
-                if (index <= size){
+                if (index < size && size > 0){
                     phoneBook[index].getAllData();
                 }			
 			}
 		}
-
 		std::cout << "commands: EXIT, ADD, SEARCH" << std::endl;
 		std::getline(std::cin, input);
 	}
-	
 }
