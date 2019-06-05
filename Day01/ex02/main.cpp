@@ -8,13 +8,11 @@ int main(void)
     Zombie      *zombie_2;
     ZombieEvent event;
 
-    event.setZombieType("trolo");
+    event.setZombieType("type 1");
     zombie_1 = event.randomChump();
-    zombie_1->announce();
     delete zombie_1;
-    event.setZombieType("macho");
+    event.setZombieType("type 2");
     zombie_2 = event.randomChump();
-    zombie_2->announce();
     delete zombie_2;
     return (0);
 }
