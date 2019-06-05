@@ -2,14 +2,10 @@
 
 # include <sstream>
 std::string Human::identify(){
-	std::stringstream get_the_address;
-	std::string address;
-    get_the_address << this;
-	address = get_the_address.str();
-	return(address);
+	return	this->_brain.identify();
 };
 
-Brain Human::getBrain(){
+Brain &Human::getBrain(){
 	return(this->_brain);
 };
 

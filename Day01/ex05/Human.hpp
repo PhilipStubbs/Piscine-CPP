@@ -10,7 +10,7 @@ private:
 
 public:
 	std::string identify();
-	Brain getBrain();
+	Brain &getBrain();
 	Human();
 	~Human();
 };
