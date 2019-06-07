@@ -103,3 +103,17 @@ Fixed   Fixed::operator++(int){
 	++(*this);              // Now use the prefix version to do the work
 	return result;
 }
+
+Fixed&  Fixed::min(Fixed const &fix1, Fixed const& fix2){
+	if (fix1.getRawBits() > fix2.getRawBits())
+		return((Fixed&)fix2);
+	else
+		return((Fixed&)fix1);
+}
+
+Fixed&  Fixed::max(Fixed const & fix1, Fixed const& fix2){
+if (fix1.getRawBits() < fix2.getRawBits())
+		return((Fixed&)fix2);
+	else
+		return((Fixed&)fix1);
+}
