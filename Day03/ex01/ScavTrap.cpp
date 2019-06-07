@@ -3,12 +3,12 @@
 ScavTrap::ScavTrap():_hitPoints(100),_maxHitPoints(100), _energyPoints(50), _maxEnergyPoints(50), _level(1),
 	_meleeAttackDamage(20), _rangedAttackDamage(15), _armorDamageReduction(3), _seed(0)
 {
-	std::cout << "Someone" << " says: Aaaaand ... OPEN !" << " but nothing opened.." << std::endl;
+	std::cout << "Someone" << " says: nothing !"  << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << this->_name << " eye got stolen then fell off of a cliff head first." << std::endl;
+	std::cout << this->_name << " died." << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
@@ -28,7 +28,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
 
 ScavTrap::ScavTrap(std::string name): _name(name), _hitPoints(100),_maxHitPoints(100), _energyPoints(50), _maxEnergyPoints(50), _level(1),
 	_meleeAttackDamage(20), _rangedAttackDamage(15), _armorDamageReduction(3), _seed(0){
-	std::cout << this->_name << " says: Aaaaand ... OPEN !" << " but nothing opened.." << std::endl;
+	std::cout << this->_name << " says: nothing !" << std::endl;
 }
 
 void ScavTrap::rangedAttack(std::string const & target){
@@ -72,24 +72,24 @@ void ScavTrap::challengeNewcomer(void) {
 		{
 		case 0:
 			{
-				std:: cout << this->_name <<" eat pie" << std::endl 
+				std:: cout << this->_name <<" eat pie" << std::endl;
 			}
 		case 1:
 			{
-				std:: cout << this->_name <<" hit xeno" << std::endl    
+				std:: cout << this->_name <<" hit xeno" << std::endl;
 			}
 		case 2:
 			{
-				std:: cout << this->_name <<" dont eat pie" << std::endl 
+				std:: cout << this->_name <<" dont eat pie" << std::endl;
 							
 			}
 		case 3:
 			{
-				std:: cout << this->_name <<" dont hit xeno" << std::endl
+				std:: cout << this->_name <<" dont hit xeno" << std::endl;
 			}
 		default:
 			{
-				std:: cout << this->_name <<" finish the C module" << std::endl
+				std:: cout << this->_name <<" finish the C module" << std::endl;
 			}
 		}
 }

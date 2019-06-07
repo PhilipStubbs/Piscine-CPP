@@ -16,5 +16,9 @@ int main(void){
 	std::cout << std::endl;
 	ScavTrap st("ScavTrap");
 	st.rangedAttack("ClapTrap");
+	st.challengeNewcomer();
+	st.challengeNewcomer();
+	st.challengeNewcomer();
+	st.challengeNewcomer();
     return 0;
 }
