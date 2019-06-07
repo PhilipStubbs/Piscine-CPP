@@ -5,7 +5,8 @@ class ScavTrap : public FragTrap
 private:
 	
 public:
-	ScavTrap(/* args */);
+	ScavTrap();
+	ScavTrap(std::string name);
 	~ScavTrap();
 };
 
