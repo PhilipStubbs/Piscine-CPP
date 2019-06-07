@@ -19,7 +19,6 @@ public:
 	Fixed   &operator=(const Fixed &other);
 	int getRawBits(void) const;
 	void setRawBits(int const);
-	 Fixed   &operator=(const Fixed &other);
 	bool    operator>(const Fixed &other);
 	bool    operator<(const Fixed &other);
 	bool    operator>=(const Fixed &other);
