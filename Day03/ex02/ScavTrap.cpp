@@ -1,8 +1,15 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap():_hitPoints(100),_maxHitPoints(100), _energyPoints(50), _maxEnergyPoints(50), _level(1),
-	_meleeAttackDamage(20), _rangedAttackDamage(15), _armorDamageReduction(3), _seed(0)
-{
+ScavTrap::ScavTrap() {
+	this->_energyPoints = 50;
+	this->_hitPoints = 100;
+	this->_level = 1;
+	this->_maxEnergyPoints = 50;
+	this->_maxHitPoints = 100;
+	this->_seed = 0;
+	this->_meleeAttackDamage = 20;
+	this->_rangedAttackDamage = 15;
+	this->_armorDamageReduction = 3;
 	std::cout << "Someone" << " says: nothing !"  << std::endl;
 }
 
@@ -12,8 +19,18 @@ ScavTrap::~ScavTrap()
 }
 
 
-ScavTrap::ScavTrap(std::string name): _name(name), _hitPoints(100),_maxHitPoints(100), _energyPoints(50), _maxEnergyPoints(50), _level(1),
-	_meleeAttackDamage(20), _rangedAttackDamage(15), _armorDamageReduction(3), _seed(0){
+ScavTrap::ScavTrap(std::string name) {
+	this->_name = name;
+	this->_energyPoints = 50;
+	this->_hitPoints = 100;
+	this->_level = 1;
+	this->_maxEnergyPoints = 50;
+	this->_maxHitPoints = 100;
+	this->_seed = 0;
+	this->_meleeAttackDamage = 20;
+	this->_rangedAttackDamage = 15;
+	this->_armorDamageReduction = 3;
+
 	std::cout << this->_name << " says: nothing !" << std::endl;
 }
 

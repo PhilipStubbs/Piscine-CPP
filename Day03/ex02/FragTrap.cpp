@@ -1,9 +1,17 @@
 #include "FragTrap.hpp"
 #include <iostream>
 
-FragTrap::FragTrap():_hitPoints(100),_maxHitPoints(100), _energyPoints(100), _maxEnergyPoints(100), _level(1),
-	_meleeAttackDamage(30), _rangedAttackDamage(20), _armorDamageReduction(5), _seed(0)
+FragTrap::FragTrap()
 {
+	this->_energyPoints = 100;
+	this->_hitPoints = 100;
+	this->_level = 1;
+	this->_maxEnergyPoints = 100;
+	this->_maxHitPoints = 100;
+	this->_seed = 0;
+	this->_meleeAttackDamage = 30;
+	this->_rangedAttackDamage = 20;
+	this->_armorDamageReduction = 5;
 	std::cout << "Someone" << " says: Aaaaand ... OPEN !" << " but nothing opened.." << std::endl;
 }
 
@@ -12,8 +20,17 @@ FragTrap::~FragTrap()
 	std::cout << this->_name << " eye got stolen then fell off of a cliff head first." << std::endl;
 }
 
-FragTrap::FragTrap(std::string name): _name(name), _hitPoints(100),_maxHitPoints(100), _energyPoints(100), _maxEnergyPoints(100), _level(1),
-	_meleeAttackDamage(30), _rangedAttackDamage(20), _armorDamageReduction(5), _seed(0){
+FragTrap::FragTrap(std::string name) {
+	this->_name = name;
+	this->_energyPoints = 100;
+	this->_hitPoints = 100;
+	this->_level = 1;
+	this->_maxEnergyPoints = 100;
+	this->_maxHitPoints = 100;
+	this->_seed = 0;
+	this->_meleeAttackDamage = 30;
+	this->_rangedAttackDamage = 20;
+	this->_armorDamageReduction = 5;
 	std::cout << this->_name << " says: Aaaaand ... OPEN !" << " but nothing opened.." << std::endl;
 }
 
