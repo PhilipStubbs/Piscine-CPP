@@ -1,24 +1,26 @@
 #include <iostream>
 #include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
+#include "ClapTrap.hpp"
 
 int main(void){
-    FragTrap ft("ClapTrap");
-
-    // ft.takeDamage(40);
-    // ft.vaulthunter_dot_exe("Badass");
-	// ft.vaulthunter_dot_exe("Badass");
-	// ft.vaulthunter_dot_exe("Badass");
-	// ft.vaulthunter_dot_exe("Badass");
-    // ft.beRepaired(10);
-    // ft.rangedAttack("Skag");
+    FragTrap ft("FragTrap");
 
 	std::cout << std::endl;
 	ScavTrap st("ScavTrap");
-	st.rangedAttack("ClapTrap");
-	st.challengeNewcomer();
-	st.challengeNewcomer();
-	st.challengeNewcomer();
-	st.challengeNewcomer();
+
+	std::cout << std::endl;
+	NinjaTrap nt("NinjaTrap");
+
+	std::cout << std::endl;
+	nt.ninjaShoebox(st);
+	std::cout << std::endl;
+	nt.ninjaShoebox(ft);
+	std::cout << std::endl;
+	nt.ninjaShoebox(nt);
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+
     return 0;
 }
