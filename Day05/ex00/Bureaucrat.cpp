@@ -50,7 +50,7 @@ void			Bureaucrat::decrementGrade(){
 // GRADE TO HIGH
 
 Bureaucrat::GradeTooHighException::GradeTooHighException(){
-
+	this->_msg = "Grade is too high";
 }
 
 Bureaucrat::GradeTooHighException::GradeTooHighException(Bureaucrat::GradeTooHighException &cpy){
@@ -68,13 +68,13 @@ Bureaucrat::GradeTooHighException&	Bureaucrat::GradeTooHighException::operator=(
 }
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw() {
-	return (this->_msg.c_str());
+	return ("Grade is too high");
 }
 
 // GRADE TO LOW
 
 Bureaucrat::GradeTooLowException::GradeTooLowException(){
-
+	this->_msg = "Grade is too low";
 }
 
 Bureaucrat::GradeTooLowException::GradeTooLowException(Bureaucrat::GradeTooLowException &cpy){
@@ -92,6 +92,6 @@ Bureaucrat::GradeTooLowException&	Bureaucrat::GradeTooLowException::operator=(Bu
 }
 
 const char*	Bureaucrat::GradeTooLowException::what() const throw() {
-	return (this->_msg.c_str());
+	return ("Grade is too low");
 }
 
