@@ -1,3 +1,7 @@
+
+#ifndef SHRUB_H
+# define SHRUB_H
+
 #include "Form.hpp"
 
 class ShrubberyCreationForm : public Form
@@ -12,17 +16,4 @@ public:
 	ShrubberyCreationForm &operator=(ShrubberyCreationForm const &r);
 };
 
-ShrubberyCreationForm::ShrubberyCreationForm() {
-}
-
-ShrubberyCreationForm::ShrubberyCreationForm(std::string targetForm): Form(targetForm, 145, 137) {
-	this->_targetForm = targetForm;
-}
-
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &other){
-	*this = other;
-}
-
-ShrubberyCreationForm::~ShrubberyCreationForm()
-{
-}
+#endif
