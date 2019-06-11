@@ -5,6 +5,7 @@
 #include <string>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
 class    Form
 {
 	private:
@@ -23,9 +24,8 @@ class    Form
 		bool                   getSigned(void) const;
 		int                    getSignGrade(void) const;
 		int                    getExecuteGrade(void) const;
-
+		void                  beSigned(const Bureaucrat& bc);
 		void                signForm(bool signable, Bureaucrat &bureaucrat ,std::string reason);
-		void                beSigned(Bureaucrat &bureaucrat);
 
 		Form &operator=(Form const &r);
 

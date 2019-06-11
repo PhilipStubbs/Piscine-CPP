@@ -1,46 +1,48 @@
 #include "Form.hpp"
-
+#include "Bureaucrat.hpp"
 int main(void)
 {
-	 try{
-        Bureaucrat b("Xeno", 150);
-        Form f("Form1", 13, 50);
-        f.beSigned(b);
-    }
-    catch (std::exception & e)
-    {
-        std::cout << e.what() << std::endl;
-    }
 
-	try{
-        Bureaucrat b("Not Xeno", 1);
-        Form f("Form2", 13, 50);
-        f.beSigned(b);
-    }
-    catch (std::exception & e)
-    {
-        std::cout <<  e.what() << std::endl;
-    }
+	std::cout << "============================" << std::endl;
+	std::cout << "===== Can sign =============" << std::endl;
+	try
+	{
+		Bureaucrat vasya("Vasya", 100);
+		Form paper("Toilet Paper", 150, 150);
 
-	try{
-        Bureaucrat b("Not Xeno", 151);
-        Form f("Form2", 13, 50);
-        f.beSigned(b);
-    }
-    catch (std::exception & e)
-    {
-        std::cout <<  e.what() << std::endl;
-    }
 
-	try{
-        Bureaucrat b("Not Xeno", 0);
-        Form f("Form2", 13, 50);
-        f.beSigned(b);
-    }
-    catch (std::exception & e)
-    {
-        std::cout <<  e.what() << std::endl;
-    }
-    
-    return 1;
+		vasya.signForm(paper);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << "==== Cant sign ==============" << std::endl;
+	try
+	{
+		Bureaucrat	borya("Borya", 5);
+		Form		law("Law", 1, 1);
+
+
+		borya.signForm(law);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << "=== Already signed ============" << std::endl;
+	try
+	{
+		Bureaucrat borya("Borya", 100);
+		Form paper("Toilet Paper", 150, 150);
+
+		borya.signForm(paper);
+		borya.signForm(paper);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << "============================" << std::endl;
+	return (0);
 }

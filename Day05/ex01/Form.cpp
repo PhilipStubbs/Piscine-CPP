@@ -44,30 +44,6 @@ int	Form::getExecuteGrade(void) const{
 	
 }
 
-void Form::signForm(bool signable, Bureaucrat &bureaucrat ,std::string reason){
-	if (signable){
-		std::cout << bureaucrat.getName() << " signs " << this->getName() << std::endl;
-	} else {
-		std::cout << bureaucrat.getName() << " cannot sign " << this->getName() << " because " << reason << std::endl;
-	}
-}
-
-void Form::beSigned(Bureaucrat &bureaucrat) {
-	Form::GradeTooLowException tooLow;
-	Form::GradeTooHighException tooHigh;
-
-	if (bureaucrat.getGrade() < 1)
-	{
-		signForm(false , bureaucrat, tooHigh.what());
-		throw tooHigh;
-	}
-	else if (bureaucrat.getGrade() > 150)
-	{
-		signForm(false ,bureaucrat ,tooLow.what());
-		throw tooLow;
-	}
-	signForm(true, bureaucrat , "");
-}
 
 // GRADE TO HIGH
 
@@ -115,4 +91,21 @@ Form::GradeTooLowException&	Form::GradeTooLowException::operator=(Form::GradeToo
 
 const char*	Form::GradeTooLowException::what() const throw() {
 	return ("Grade is too low");
+}
+
+void			Form::beSigned(const Bureaucrat& bc) {
+	Form::GradeTooLowException low;
+	Form::GradeTooHighException high;
+
+	if (this->_signed == true)
+	{
+		std::cout << bc.getName() << " already signed " << std::endl;
+		return;
+	}
+	if (bc.getGrade() > this->getSignGrade())
+		throw low;
+	if (bc.getGrade() > this->getExecuteGrade())
+		throw low;
+	this->_signed = true;
+	std::cout << bc.getName() << " succesfully signed" << std::endl;
 }

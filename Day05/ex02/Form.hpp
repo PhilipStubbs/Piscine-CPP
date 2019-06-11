@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include "Bureaucrat.hpp"
+class Bureaucrat;
 
 class    Form
 {
@@ -18,14 +19,12 @@ class    Form
 		Form(std::string const name, int sgrade, int egrade);
 		Form(Form &other);
 		virtual ~Form(void);
-
+		void beSigned(const Bureaucrat& bc);
 		std::string            getName(void) const;
 		bool                   getSigned(void) const;
 		int                    getSignGrade(void) const;
 		int                    getExecuteGrade(void) const;
-
-		void                signForm(bool signable, Bureaucrat &bureaucrat ,std::string reason);
-		void                beSigned(Bureaucrat &bureaucrat);
+		virtual void	 	execute(Bureaucrat const &executor) const = 0;
 
 		Form &operator=(Form const &r);
 
