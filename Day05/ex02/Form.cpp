@@ -69,6 +69,11 @@ void Form::beSigned(Bureaucrat &bureaucrat) {
 	signForm(true, bureaucrat , "");
 }
 
+		// void                   Form::setSigned(bool isSigned);
+		// void                   Form::setSignGrade(int grade);
+		// void                   Form::setExecuteGrade(int grade);
+
+
 // GRADE TO HIGH
 
 Form::GradeTooHighException::GradeTooHighException(){
