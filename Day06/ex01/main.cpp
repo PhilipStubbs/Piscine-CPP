@@ -39,12 +39,13 @@ Data * deserialize( void * raw ){
 	return(var_name);
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
-	(void)argc;
-	(void)argv;
 	void * raw = serialize();
+	std::cout << "memory address: " << raw << std::endl;
+	
 	Data *ret =deserialize(raw);
+
 	std::cout << std::endl << "_New data_" << std::endl
 	<< ret->s1 << std::endl
 	<< ret->s2 << std::endl
