@@ -23,6 +23,7 @@ int main(int argc, char const *argv[])
 		std::cout << "char: " << "impossible" <<std::endl;
 	}
 
+	//INT
 	try{
 		int a = std::stoi(input);
 		std::cout << "int: " << a <<std::endl;
